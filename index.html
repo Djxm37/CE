@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Escape : Le Puzzle Chiffré</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div id="game-container">
+        <h1>Cyber Escape : Le Puzzle Chiffré</h1>
+        
+        <div id="intro">
+            <p>Bienvenue dans le Cyber Escape. Assemble le puzzle pour révéler le message chiffré !</p>
+            <button id="start-btn">Commencer</button>
+        </div>
+        
+        <div id="puzzle-stage" class="stage hidden">
+            <h2>Épreuve 1 : Assemble le Puzzle</h2>
+            <div id="puzzle-container">
+                <div id="puzzle-grid"></div>
+                <div id="pieces-container"></div>
+            </div>
+            <p id="encrypted-text" style="margin: 20px 0; padding: 10px; background-color: #001122; border: 1px solid #00FF00; display: none;"></p>
+            <button id="validate-puzzle">Valider Puzzle</button>
+        </div>
+        
+        <div id="key-stage" class="stage hidden">
+            <h2>Épreuve 2 : Trouve la Clé</h2>
+            <p>Indices : Le décalage est lié au nombre de pièces assemblées. Clique sur les terminaux pour des indices.</p>
+            <div id="hints">
+                <button class="hint-btn" data-hint="Indice 1 : Compte les pièces du puzzle (9).">Terminal 1</button>
+                <button class="hint-btn" data-hint="Indice 2 : Le décalage est entre 1 et 25.">Terminal 2</button>
+                <button class="hint-btn" data-hint="Indice 3 : Pense à César !">Terminal 3</button>
+            </div>
+            <input type="number" id="key-input" placeholder="Entre la clé (1-25)" min="1" max="25">
+            <button id="validate-key">Valider Clé</button>
+        </div>
+        
+        <div id="decrypt-stage" class="stage hidden">
+            <h2>Épreuve 3 : Vérifie le Déchiffrement</h2>
+            <p>Voici le message chiffré obtenu après le puzzle :</p>
+            <p id="encrypted-display" style="margin: 10px; padding: 10px; background-color: #001122; border: 1px solid #00FF00;"></p>
+            <p>Entre le message déchiffré (texte clair) en utilisant la clé obtenue :</p>
+            <input type="text" id="decrypted-input" placeholder="Entre le message déchiffré ici" style="width: 80%; padding: 10px; margin: 10px;">
+            <input type="number" id="decrypt-key" placeholder="Entre la clé pour déchiffrer (1-25)" min="1" max="25">
+            <button id="decrypt-btn">Valider déchiffrement</button>
+            <p id="decrypted-text" class="hidden"></p>
+        </div>
+        
+        <div id="victory" class="hidden">
+            <h2>Victoire !</h2>
+            <p>Tu as réussi à décrypter le message. La cryptographie est l'art de protéger les secrets.</p>
+            <button id="restart-btn">Rejouer</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
