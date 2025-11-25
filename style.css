@@ -1,0 +1,125 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #001122;
+    color: #00FF00;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #002244;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00FF00;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+.stage {
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#puzzle-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#puzzle-grid {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #00FF00;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #001122;
+}
+
+.piece {
+    width: 100px;
+    height: 100px;
+    background-color: #004466;
+    border: 1px solid #00FF00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    position: relative;
+}
+
+.piece-slot {
+    border: 1px dashed #00FF00;
+    background-color: #001122;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+#pieces-container {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #00FF00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #001122;
+}
+
+button {
+    background-color: #00FF00;
+    color: #001122;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #00CC00;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    background-color: #001122;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    text-align: center;
+}
+
+#hints {
+    margin: 20px 0;
+}
+
+.hint-btn {
+    margin: 5px;
+}
+
+/* Matrix-style background canvas */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background: transparent;
+}
